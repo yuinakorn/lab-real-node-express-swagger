@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Function to generate JWT
-export const generateToken = (userId, username) => {
-    return jwt.sign({ id: userId, sub: username }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+export const generateToken = (userId) => {
+    return jwt.sign({ id: userId}, process.env.JWT_SECRET_KEY, { expiresIn: '5m' });
 };
 
 // Function to authenticate JWT
